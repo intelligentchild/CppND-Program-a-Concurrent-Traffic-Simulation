@@ -27,9 +27,7 @@ void MessageQueue<T>::send(T &&msg)
     _condition.notify_one();
 }
 
-
 /* Implementation of class "TrafficLight" */
-
 
 TrafficLight::TrafficLight()
 {
