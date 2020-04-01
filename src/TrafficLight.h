@@ -38,7 +38,7 @@ enum TrafficLightPhase{
     green
 };
 
-class TrafficLight
+class TrafficLight: public TrafficObject, public std::enable_shared_from_this<TrafficLight>
 {
 public:
     // constructor / desctructor
