@@ -69,6 +69,7 @@ void TrafficLight::cycleThroughPhases()
         long duration = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - lastUpdate).count();
         if(duration > cycleDuration){
             //Toggle current phase
+            //using seprate value to message queue since the original value is needed for showing graphics
             TrafficLightPhase currentPhase = (_currentPhase==TrafficLightPhase::red? TrafficLightPhase::green:TrafficLightPhase::red);
             _currentPhase=currentPhase;
             std::cout<<"Traffic Light #"<<getID() <<"turning to "<<(_currentPhase==TrafficLightPhase::red?"red":"green")<<":"<<(currentPhase==TrafficLightPhase::red?"red":"green")<<std::endl;
